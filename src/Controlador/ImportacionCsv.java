@@ -18,6 +18,8 @@ public class ImportacionCsv {
 		String[] linea = new String[5];
 		CSVReader csvReader;
 		List<Libro> lista = new ArrayList<>();
+		
+		
 		try {
 			csvReader = new CSVReader(new FileReader(inFile));
 			linea = csvReader.readNext();
@@ -45,13 +47,17 @@ public class ImportacionCsv {
 		for (int i = 0; i < lista.size(); i++) {
 			datos[0] = lista.get(i).getIsbn();
 			datos[1] = lista.get(i).getBookTitle();
-			datos[2] = lista.get(i).getBookAutor();
+			datos[2] = lista.get(i).getBookAuthor();
 			datos[3] = lista.get(i).getBookYear()+"";
 			datos[4] = lista.get(i).getPublisher();
 			dtm.addRow(datos);
 		}
 		return dtm;
 		
+	}
+	public static DefaultTableModel eliminarRegistro(String[] cabecera, List<Libro> lista, int fila){
+		lista.remove(fila);
+		return tablaRegistros(cabecera, lista);
 	}
 	
 }

@@ -3,50 +3,65 @@ package Modelo;
 public class Libro {
 	private String isbn;
 	private String bookTitle;
-	private String bookAutor;
+	private String bookAuthor;
 	private int bookYear;
-	private String Publisher;
-	public Libro(String isbn, String bookTitle, String bookAutor, int bookYear, String publisher) {
-		super();
+	private String publisher;
+	public Libro(String isbn, String bookTitle, String bookAuthor, int bookYear, String publisher) {
+		
 		this.isbn = isbn;
 		this.bookTitle = bookTitle;
-		this.bookAutor = bookAutor;
+		this.bookAuthor = bookAuthor;
 		this.bookYear = bookYear;
-		Publisher = publisher;
+		this.publisher = publisher;
 	}
+	public void setLibro (Libro libro){
+		this.isbn = libro.isbn;
+		this.bookTitle = libro.bookTitle;
+		this.bookAuthor = libro.bookAuthor;
+		this.bookYear = libro.bookYear;
+		this.publisher = libro.publisher;
+	}
+	
+	
 	public String getIsbn() {
 		return isbn;
 	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
+	
 	public String getBookTitle() {
 		return bookTitle;
 	}
-	public void setBookTitle(String bookTitle) {
-		this.bookTitle = bookTitle;
-	}
-	public String getBookAutor() {
-		return bookAutor;
-	}
-	public void setBookAutor(String bookAutor) {
-		this.bookAutor = bookAutor;
+	public String getBookAuthor() {
+		return bookAuthor;
 	}
 	public int getBookYear() {
 		return bookYear;
 	}
+	public String getPublisher() {
+		return publisher;
+	}
+	
+	
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
+	}
+	
+	public void setBookAuthor(String bookAutor) {
+		this.bookAuthor = bookAutor;
+	}
+	
 	public void setBookYear(int bookYear) {
 		this.bookYear = bookYear;
 	}
-	public String getPublisher() {
-		return Publisher;
-	}
+	
 	public void setPublisher(String publisher) {
-		Publisher = publisher;
+		this.publisher = publisher;
 	}
-	@Override
+	/*@Override
 	public String toString() {
-		return isbn + bookTitle + bookAutor + bookYear + Publisher ;
-	}
+		return isbn + bookTitle + bookAuthor + bookYear + Publisher ;
+	}*/
 	
 }
