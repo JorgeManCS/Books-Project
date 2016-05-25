@@ -1,25 +1,41 @@
 package Modelo;
 
+/**
+ * @author JorgeManuel
+ *
+ */
 public class Libro {
 	private String isbn;
 	private String bookTitle;
 	private String bookAuthor;
 	private int bookYear;
 	private String publisher;
-	public Libro(String isbn, String bookTitle, String bookAuthor, int bookYear, String publisher) {
+	//private String imageurl;
+	/**
+	 * @param isbn
+	 * @param bookTitle
+	 * @param bookAuthor
+	 * @param bookYear
+	 * @param publisher
+	 */
+	public Libro(String isbn, String bookTitle, String bookAuthor, int bookYear, String publisher/*, String imageurl*/) {
 		
 		this.isbn = isbn;
 		this.bookTitle = bookTitle;
 		this.bookAuthor = bookAuthor;
 		this.bookYear = bookYear;
 		this.publisher = publisher;
+		//this.imageurl = imageurl;
 	}
-	public void setLibro (Libro libro){
-		this.isbn = libro.isbn;
-		this.bookTitle = libro.bookTitle;
-		this.bookAuthor = libro.bookAuthor;
-		this.bookYear = libro.bookYear;
-		this.publisher = libro.publisher;
+	
+	//Libro por defecto que se muestra cuando 
+	//se añade un libro nuevo a la tabla
+	public Libro(){
+		this.isbn = "";
+		this.bookTitle = "";
+		this.bookAuthor = "";
+		this.bookYear = 0;
+		this.publisher = "";
 	}
 	
 	
@@ -39,8 +55,13 @@ public class Libro {
 	public String getPublisher() {
 		return publisher;
 	}
-	
-	
+	/*
+	public String getImageurl() {
+		return imageurl;
+	}
+	public void setImageurl(String imageurl) {
+		this.imageurl = imageurl;
+	}*/
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
@@ -59,9 +80,12 @@ public class Libro {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
+	
 	/*@Override
 	public String toString() {
 		return isbn + bookTitle + bookAuthor + bookYear + Publisher ;
 	}*/
+	
+	
 	
 }

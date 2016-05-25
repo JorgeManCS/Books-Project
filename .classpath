@@ -5,5 +5,6 @@
 	<classpathentry kind="lib" path="C:/Users/JorgeManuel/IDEs/eclipse/Librerias/opencsv-3.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/JorgeManuel/Dropbox/DAM/Proyecto Final/jgoodies-forms-1.8.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/JorgeManuel/Dropbox/DAM/Proyecto Final/jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JorgeManuel/IDEs/eclipse/Librerias/itextpdf-5.4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

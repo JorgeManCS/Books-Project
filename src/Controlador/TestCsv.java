@@ -6,6 +6,10 @@ import java.util.List;
 
 import Modelo.Libro;
 
+/**
+ * @author JorgeManuel
+ *Clase para comporvar que efectivamente cargaba el fichero CSV
+ */
 public class TestCsv {
 	public static void main(String[] args) {
 		File inFile = new File("resources\\books.csv");
