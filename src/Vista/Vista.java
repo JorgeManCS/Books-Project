@@ -129,11 +129,12 @@ public class Vista extends JFrame {
 		JMenu menuStart = new JMenu("Start");
 		menuBar.add(menuStart);
 		
+		
 		JMenuItem fUpload = new JMenuItem("File Upload");
 		menuStart.add(fUpload);
 		
 		fUpload.addActionListener(new ActionListener(){
-
+			
 			/* (non-Javadoc)
 			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 			 */
@@ -260,16 +261,16 @@ public class Vista extends JFrame {
 		
 		
 		JLabel labelAuthor = new JLabel("AUTHOR");
-		textAuthor.addActionListener (new java.awt.event.ActionListener(){
+		textPublicationYear.addActionListener (new java.awt.event.ActionListener(){
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				celdaAuthorActionPerformed(evt);				
+				celdaYearActionPerformed(evt);				
 			}			 
 		 });
 		
 		JLabel labelPublicationYear = new JLabel("PUBLICATION YEAR");
 		textAuthor.addActionListener (new java.awt.event.ActionListener(){
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				celdaYearActionPerformed(evt);				
+				celdaAuthorActionPerformed(evt);				
 			}			 
 		 });
 		
@@ -353,7 +354,7 @@ public class Vista extends JFrame {
 	//Añade Titulo a la celda correspondiente
 	private void celdaTitleActionPerformed (java.awt.event.ActionEvent evt){
 		int fila = tabla.getSelectedRow();
-		lista.get(tabla.getSelectedRow()).setIsbn(textTitle.getText());
+		lista.get(tabla.getSelectedRow()).setBookTitle(textTitle.getText());
 		actualizar = false;
 		tabla.setModel(ImportacionCsv.tablaRegistros(cabecera, lista));
 		actualizar = true;
@@ -363,7 +364,7 @@ public class Vista extends JFrame {
 	//Añade Autor a la celda correspondiente
 	private void celdaAuthorActionPerformed (java.awt.event.ActionEvent evt){
 		int fila = tabla.getSelectedRow();
-		lista.get(tabla.getSelectedRow()).setIsbn(textAuthor.getText());
+		lista.get(tabla.getSelectedRow()).setBookAuthor(textAuthor.getText());
 		actualizar = false;
 		tabla.setModel(ImportacionCsv.tablaRegistros(cabecera, lista));
 		actualizar = true;
@@ -373,7 +374,7 @@ public class Vista extends JFrame {
 	//Añade Año a la celda correspondiente
 	private void celdaYearActionPerformed (java.awt.event.ActionEvent evt){
 		int fila = tabla.getSelectedRow();
-		lista.get(tabla.getSelectedRow()).setIsbn(textPublicationYear.getText());
+		lista.get(tabla.getSelectedRow()).setBookYear(Integer.parseInt(textPublicationYear.getText()));
 		actualizar = false;
 		tabla.setModel(ImportacionCsv.tablaRegistros(cabecera, lista));
 		actualizar = true;
@@ -383,7 +384,7 @@ public class Vista extends JFrame {
 	//Añade Publisher a la celda correspondiente
 	private void celdaPublisherActionPerformed (java.awt.event.ActionEvent evt){
 		int fila = tabla.getSelectedRow();
-		lista.get(tabla.getSelectedRow()).setIsbn(textPublisher.getText());
+		lista.get(tabla.getSelectedRow()).setPublisher(textPublisher.getText());
 		actualizar = false;
 		tabla.setModel(ImportacionCsv.tablaRegistros(cabecera, lista));
 		actualizar = true;
@@ -443,5 +444,5 @@ public class Vista extends JFrame {
 					+ "Virgen del Carmen 2015/2016\n"
 					+ "Jorge Manuel Castillo Sánchez","About: ", JOptionPane.PLAIN_MESSAGE);
 		}
-
+	 
 }

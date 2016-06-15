@@ -13,5 +13,7 @@ public class ControladorTabla extends DefaultTableModel{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	
 
 }
