@@ -130,7 +130,8 @@ public class Vista extends JFrame {
 		menuBar.add(menuStart);
 		
 		
-		JMenuItem fUpload = new JMenuItem("File Upload");
+		JMenuItem 
+fUpload = new JMenuItem("File Upload");
 		menuStart.add(fUpload);
 		
 		fUpload.addActionListener(new ActionListener(){
@@ -145,7 +146,7 @@ public class Vista extends JFrame {
 				int archivo = abrirArchivo.showOpenDialog(contentPane);
 				if (archivo==JFileChooser.APPROVE_OPTION){
 					lista = ImportacionCsv.registros(abrirArchivo.getSelectedFile());
-					tabla.setModel(ImportacionCsv.tablaRegistros(cabecera, lista));
+					tabla.setModel(ImportacionCsv.anadirRegistro(cabecera, lista));
 				}
 			}
 			

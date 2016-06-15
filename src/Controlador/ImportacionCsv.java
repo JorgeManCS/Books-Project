@@ -36,6 +36,8 @@ public class ImportacionCsv {
 			lista.add(new Libro(linea[0], linea[1], linea[2], Integer.parseInt(linea[3]), linea[4]/*, linea[5]*/));
 			linea = csvReader.readNext();
 			}
+			ControladorBD.crearTabla(ControladorBD.getConexiondb());
+			ControladorBD.primeraInsercion(ControladorBD.getConexiondb(), lista);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -82,6 +84,7 @@ public class ImportacionCsv {
 	 */
 	public static DefaultTableModel eliminarRegistro(String[] cabecera, List<Libro> lista, int fila){
 		lista.remove(fila);
+		ControladorBD.borrarRegistro(ControladorBD.getConexiondb(), fila+1);
 		return tablaRegistros(cabecera, lista);
 	}
 	
@@ -94,6 +97,7 @@ public class ImportacionCsv {
 	 */
 	public static DefaultTableModel anadirRegistro(String[] cabecera, List<Libro> lista){
 		lista.add(new Libro());
+		ControladorBD.insertarFilaVacia(ControladorBD.getConexiondb());
 		return tablaRegistros(cabecera,lista);
 	}
 	
